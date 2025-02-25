@@ -1,4 +1,2 @@
-{
-    "OK": 200,
-    "INTERNAL_SERVER_ERROR": 500
-}
+node_modules/\
+.env
