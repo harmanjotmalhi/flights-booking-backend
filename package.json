@@ -1,0 +1,20 @@
+{
+  "name": "base_node_js_project_template",
+  "version": "1.0.0",
+  "description": "A basic started boilerpate project for node",
+  "license": "ISC",
+  "author": "Harman",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "enc": "^0.4.0",
+    "env": "^0.0.2",
+    "express": "^4.21.2",
+    "http-status-codes": "^2.3.0",
+    "nodemon": "^3.1.9"
+  }
+}
