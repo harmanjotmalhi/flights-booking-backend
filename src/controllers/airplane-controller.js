@@ -6,20 +6,21 @@ async function createAirplane(req, res){
         const airplane = await AirplaneService.createAirplane({
             modelNumber: req.body.modelNumber,
             capacity: req.body.capacity
-        })
+        });
+        
         return res
         .status(StatusCodes.CREATED)
         .json({
             success: true,
             message: 'Airplane created successfully',
-            data: response,
+            data: airplane,
             error: {}
-        })
+        });
     } catch (error) {
         return res.status(StatusCodes.INTERNAL_SERVER_ERROR)
         .json({
             success: false,
-            messsage: 'Something went wrong while creating airplane',
+            message: 'Something went wrong while creating airplane',
             data: {},
             error: error
         })

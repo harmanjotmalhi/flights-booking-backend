@@ -28,7 +28,7 @@ class CrudRepository {
         }
     }
 
-    async destroy(data) {
+    async getById(data) {
         try {
             const response = await this.model.findByPk(data);
             return response;
@@ -63,4 +63,4 @@ class CrudRepository {
     }
 }
 
-model.exports = CrudRepository;
+module.exports = CrudRepository;
