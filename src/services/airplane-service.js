@@ -32,4 +32,20 @@ async function getAirplanes() {
     }
 }
 
-module.exports = { createAirplane, getAirplanes };
+async function getAirplane(id) {
+
+    try {
+        const airplane = await airplaneRepository.getById(id);
+        return airplane;
+    }
+    catch(error){
+        if(error.statusCode == StatusCodes.NOT_FOUND){
+            throw new AppError(error.message, StatusCodes.NOT_FOUND);
+        }
+        throw new AppError('Cannot fetch airplane', StatusCodes.INTERNAL_SERVER_ERROR);
+    }
+}
+
+
+
+module.exports = { createAirplane, getAirplanes, getAirplane};
