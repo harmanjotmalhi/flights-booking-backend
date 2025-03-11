@@ -17,6 +17,9 @@ class CrudRepository {
                 id: data
             }
         });
+        if(!response){
+            throw new AppError('Resource does not exist', StatusCodes.NOT_FOUND);
+        }
         return response;
     }
 
