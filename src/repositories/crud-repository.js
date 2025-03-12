@@ -12,6 +12,7 @@ class CrudRepository {
     }
 
     async destroy(data) {
+        //console.log(data);
         const response = await this.model.destroy({
             where: {
                 id: data
@@ -37,7 +38,7 @@ class CrudRepository {
     }
 
     async update(id, data) {
-        const [updatedRows] = await this.model.update(data, {
+        const updatedRows = await this.model.update(data, {
             where: {
                 id: id
             }
@@ -46,7 +47,8 @@ class CrudRepository {
         if(updatedRows === 0){
             throw new AppError('Resource does not exist', StatusCodes.NOT_FOUND);
         }
-        return response;
+        //console.log(reponse);
+        return updatedRows;
     }
 }
 
