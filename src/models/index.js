@@ -41,4 +41,5 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 db.Airplane = require('./airplane')(sequelize, Sequelize.DataTypes);
+db.City = require('./city')(sequelize, Sequelize.DataTypes);
 module.exports = db;
