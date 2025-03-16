@@ -31,6 +31,10 @@ fs
     db[model.name] = model;
   });
 
+db.Airplane = require('./airplane')(sequelize, Sequelize.DataTypes);
+db.City = require('./city')(sequelize, Sequelize.DataTypes);
+db.Airport = require('./airport')(sequelize, Sequelize.DataTypes);
+
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
@@ -40,6 +44,5 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.Airplane = require('./airplane')(sequelize, Sequelize.DataTypes);
-db.City = require('./city')(sequelize, Sequelize.DataTypes);
+
 module.exports = db;

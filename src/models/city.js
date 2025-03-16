@@ -11,9 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       
-      this.hasMany(models.Airport, {
-        foreignKey: 'cityId'
-      });
+      this.hasMany(models.Airport,  { foreignKey: 'cityId', as: 'airports' });
     }
   }
   City.init({
@@ -24,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     sequelize,
-    modelName: 'Cities',
-    tableName: 'Cities',
+    modelName: 'City',
+    tableName: 'City',
     timestamps: true
   });
   return City;
