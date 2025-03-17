@@ -1,4 +1,4 @@
-node_modules/\
+node_modules
 .env
 combines.log
 src/config/config.json
