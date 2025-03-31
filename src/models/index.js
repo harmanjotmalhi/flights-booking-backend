@@ -34,6 +34,7 @@ fs
 db.Airplane = require('./airplane')(sequelize, Sequelize.DataTypes);
 db.City = require('./city')(sequelize, Sequelize.DataTypes);
 db.Airport = require('./airport')(sequelize, Sequelize.DataTypes);
+db.Flight = require('./flight')(sequelize, Sequelize.DataTypes);
 
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
